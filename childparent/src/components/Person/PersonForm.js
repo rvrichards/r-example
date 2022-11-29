@@ -4,7 +4,8 @@ function PersonForm(props) {
     const [enteredAge, setEnteredAge] = useState('');
     const [enteredName, setEnteredName] = useState('');
 
-    const nameChangeHandler = (event) => {
+    // const nameChangeHandler = (event) => {
+    function nameChangeHandler(event) {
         setEnteredName(event.target.value);
     };
 

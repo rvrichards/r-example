@@ -1,4 +1,3 @@
-import './App.css';
 import Person from './components/Person/Person';
 
 /* This will show the passing of information from child-> parent.
