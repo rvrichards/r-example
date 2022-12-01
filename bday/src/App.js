@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import Person from './components/Person/Person';
+import People from './components/People/People';
+import NewPerson from './components/NewPerson/NewPerson';
  
+const PEOPLE = [
+  { id: '1', firstName: 'Fred',   lastName: 'Flintstone', year: 1961 },    
+  { id: '2', firstName: 'Wilma',  lastName: 'Flintstone', year: 1967 },    
+  { id: '3', firstName: 'Betty',  lastName: 'Rubble', year: 1969 },    
+];
 
 function App() {
-  const persons = [
-    { id: '1', firstname: 'Fred',  lastname: 'Flintstone', year: 1961 },    
-    { id: '2', firstname: 'Wilma',  lastname: 'Flintstone', year: 1967 },    
-    { id: '3', firstname: 'Betty',  lastname: 'Rubble', year: 1969 },    
+  const [people, setPeople] = useState(PEOPLE);
 
-  ];
+  // Get previous state and add new info
+  const addPersonHandler = (person) => {
+    setPeople((prevPeople) => {
+      return [person, ...prevPeople];
+    });
+  };
 
 
   return (
     <div>
-      <Person person={persons} />
+      <NewPerson onAddPerson={addPersonHandler} />
+      <People people={people} />
     </div>
   );
 
 }
 
-export default App;
+export default App; 

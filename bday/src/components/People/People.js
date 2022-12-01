@@ -1,7 +1,9 @@
-import React from 'react';
-// import {useState} from 'react';
+import React  from 'react';
+import Person from './Person';
+import Card from '../UI/Card';
 
-function Person(props) {
+
+function People(props) {
     // const [enteredFirstName, setFirstName] = useState('');
     // const [enteredLastName, setLastName] = useState('');
     // const [enteredYear, setYear] = useState('');
@@ -21,16 +23,18 @@ function Person(props) {
 
     return (
         <div>
-            <h2>People</h2>
-            {props.person[0].firstname} {props.person[0].lastname} born in {props.person[0].year}
-            <h3>Next</h3>
-            {props.person[1].firstname} {props.person[1].lastname} born in {props.person[1].year}
-            <h4>Last</h4>
-            {props.person[2].firstname} {props.person[2].lastname} born in {props.person[2].year}
-            
+            <Card className='people'>
+            {props.people.map((person) => (
+                <Person
+                    firstName={person.firstName}
+                    lastName={person.lastName}
+                    year={person.year}
+                />
+                ))}
+            </Card>
         </div>
 
     )
 }
 
-export default Person
+export default People;
