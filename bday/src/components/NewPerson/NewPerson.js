@@ -5,7 +5,8 @@ import PersonForm from './PersonForm';
 const NewPerson = (props) => {
   const savePersonDataHandler = (enteredPersonData) => {
     const personData = {
-      ...enteredPersonData
+      ...enteredPersonData,
+      id: Math.random().toString()
     };
     props.onAddPerson(personData);
   };

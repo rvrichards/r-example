@@ -12,6 +12,8 @@ const PEOPLE = [
 function App() {
   const [people, setPeople] = useState(PEOPLE);
 
+  console.log("APP>" + JSON.stringify(PEOPLE));
+
   // Get previous state and add new info
   const addPersonHandler = (person) => {
     setPeople((prevPeople) => {
