@@ -10,7 +10,7 @@ function People(props) {
             <Card className='people'>
             {props.people.map((person) => (
                 <Person
-                    key={person.id}
+                    key={person.id}  // doesn't pass thru?
                     id={person.id}
                     firstName={person.firstName}
                     lastName={person.lastName}

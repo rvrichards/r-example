@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PersonForm from './PersonForm';
 
 const NewPerson = (props) => {
